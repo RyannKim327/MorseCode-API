@@ -1,0 +1,32 @@
+<h3>Morse Code</h3>
+<h5>Developed by MPOP Reverse II</h5>
+
+<blockquote>  The purpose of this development is to practice some ideas about identifications of characters. As making a simple code of identifying data if it is a roman characters or in a morse code encryption.</blockquote>
+
+<h5>Sample use</h5>
+
+const axios = require("axios");<br>
+<br>
+let result = async (data) => {<br>
+&emsp;let output = await axios.get("https://api-morsecode.vercel.app?data=" + data).then(response => {<br>
+&emsp;&emsp;return response.data;<br>
+	}).catch(error => {<br>
+&emsp;&emsp;console.error(`Error [Axios Morse]: ${error}`);<br>
+&emsp;&emsp;return null;<br>
+	});<br>
+&emsp;return output;<br>
+};<br>
+<br>
+module.exports = async (str) => {<br>
+&emsp;let data = await result(data);<br>
+&emsp;console.log(data);<br>
+}<br>
+
+<h5>Sample Result</h5>
+{<br>
+&emsp;"input": "sample data",<br>
+&emsp;"result": "... .- -- .--. .-.. . / -.. .- - .- "<br>
+}<br>
+
+
+<blockquote>    The system will automatically remove the unwanted characters that won't be needed. If you see any kind of bugs and error, kindly send an email @ weryses19@gmail.com or create an issue on my GitHub @RyannKim327.</blockquote>
